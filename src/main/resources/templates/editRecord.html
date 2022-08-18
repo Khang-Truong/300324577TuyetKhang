@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container mt-2">
+<!--    <div class="card-header"></div>-->
+    <div class="card-body">
+        <h1>Edit An Entry</h1>
+        <form action="#" th:action="@{save}" method="post">
+            <table>
+                <tr>
+                    <td>Client Number:</td> </tr>
+                <tr>
+                    <td><input type="text" name="clientno" th:value="${record.clientno}"/></td>
+                </tr>
+                <tr>
+                    <td>Client Name:</td></tr>
+                <tr>
+                    <td><input type="text" name="clientname" th:value="${record.clientname}"/></td>
+                </tr>
+                <tr>
+                    <td>Loan Amount:</td></tr>
+                <tr>
+                    <td><input type="number" name="loananmount" th:value="${record.loananmount}"/></td>
+                </tr>
+                <tr>
+                    <td>Number of years:</td></tr>
+                <tr>
+                    <td><input type="number" name="years" th:value="${record.years}"/></td>
+                </tr>
+                <tr>
+                    <td>Savings Type:</td></tr>
+                <tr>
+                    <td>
+                        <select name="loantype" th:value="${record.loantype}">
+                            <option th:each="p:${savingsTypeList}" th:value="${p}" th:text="${p}" th:selected="${p}==${record.loantype}"/>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Edit" class="btn btn-success"/></td>
+                </tr>
+            </table>
+        </form>
+        </form>
+    </div>
+</div>
+</body>
+</html>

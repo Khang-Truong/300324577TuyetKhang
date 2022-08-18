@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!--    <script th:inline="javascript">-->
+    <!--        var u = [[${session.a}]];-->
+    <!--        if (u == 1) {-->
+    <!--            alert('One record added');-->
+    <!--        }-->
+    <!--    </script>-->
+    <!--    <script th:inline="javascript">-->
+    <!--        var u = [[${session.e}]];-->
+    <!--        if (u == 2) {-->
+    <!--            alert('One record edited');-->
+    <!--        }-->
+    <!--    </script>-->
+
+    <style>
+        .pre-scrollable {
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<h1 th:text="'Projected table of customer number ' + ${record.clientno}"></h1>
+<h1 th:text="'Name: ' + ${record.clientname}"></h1>
+<div class="container mt-2">
+<!--    <div class="card-header"></div>-->
+    <div class="card-body">
+        <!--        <p>The following are the loan records ...</p>-->
+        <!--        <form method="get" th:action="@{index}">-->
+        <!--            <label>Key Word</label>-->
+        <!--            <input type="text" name="keyword">-->
+        <!--            <button type="submit" class="btn-primary">Search</button>-->
+        <!--            <button type="submit" class="btn-primary">See All</button>-->
+        <!--        </form>-->
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Year</th>
+                <th>Starting Amount</th>
+                <th>Interest</th>
+                <th>Monthly Payment</th>
+                <th>Ending Balance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+                <td th:text="${monthlyPayment}"></td>
+                <td th:text="${record.loananmount}"></td>
+            </tr>
+            <!--            <tr th:each="p:${listAmortization}">-->
+            <!--                <td th:text="${p.clientno}"></td>-->
+            <!--                <td th:text="${p.clientname}"></td>-->
+            <!--                <td th:text="${p.loananmount}"></td>-->
+            <!--                <td th:text="${p.years}"></td>-->
+            <!--                <td th:text="${p.loantype}"></td>-->
+            <!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
