@@ -1,7 +1,7 @@
 # 300324577TuyetKhang
 This is a final exam of CISI 3275 Software Engineering. 
 
-It using Spring Boot framework and React
+It using Spring Boot framework 
 
 # Some picture about the project
 ![image](https://user-images.githubusercontent.com/62549740/186309173-d36375d6-baf1-4c3e-a82c-f8ec2765eb72.png)
@@ -11,7 +11,7 @@ It using Spring Boot framework and React
 
 # Built with
 - Java
-- React
+- Thymeleaf
 - Spring Data JPA
 - MySQL
 
